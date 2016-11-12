@@ -7,6 +7,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.ohack.aet.constants.Caste;
 import com.ohack.aet.constants.Criteria;
+import com.ohack.aet.constants.MaritalStatus;
+import com.ohack.aet.constants.Qualification;
 
 @Document(collection = "events")
 public class TrainingEvent {
@@ -35,7 +37,7 @@ public class TrainingEvent {
 	
 	private long incomeBounded;
 	
-	private Caste caste;
+	private String caste;
 	
 	private String tradeType;
 	
@@ -130,6 +132,14 @@ public class TrainingEvent {
 		this.ageEligibility = ageEligibility;
 	}
 
+	public long getIncomeBounded() {
+		return incomeBounded;
+	}
+
+	public void setIncomeBounded(long incomeBounded) {
+		this.incomeBounded = incomeBounded;
+	}
+
 	public String getQualification() {
 		return qualification;
 	}
@@ -146,20 +156,13 @@ public class TrainingEvent {
 		this.maritalStatus = maritalStatus;
 	}
 
-	public long getIncomeBounded() {
-		return incomeBounded;
-	}
-
-	public void setIncomeBounded(long incomeBounded) {
-		this.incomeBounded = incomeBounded;
-	}
-
-	public Caste getCaste() {
+	public String getCaste() {
 		return caste;
 	}
 
-	public void setCaste(Caste caste) {
+	public void setCaste(String caste) {
 		this.caste = caste;
 	}
+
 
 }
