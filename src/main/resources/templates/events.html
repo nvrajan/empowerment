@@ -25,8 +25,9 @@
 				<tr th:each="car : ${eventList}">
 					<td th:text="${car.eventName}"></td>
 					<td th:text="${car.duration}"></td>
-					<td th:text="${car.description}"></td>
+					<td><div>${car.description}</div></td>
 					<td th:text="${car.stipend}"></td>
+					<td th:text= "${car.endDate}"></td>
 				</tr>
 			</tbody>
 		</table>

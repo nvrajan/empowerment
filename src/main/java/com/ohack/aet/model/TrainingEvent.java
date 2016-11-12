@@ -5,10 +5,13 @@ import java.util.Map;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.ohack.aet.constants.Caste;
 import com.ohack.aet.constants.Criteria;
 
 @Document(collection = "events")
 public class TrainingEvent {
+	
+	private String id;
 	
 	private String eventName;
 	
@@ -24,11 +27,27 @@ public class TrainingEvent {
 	
 	private Date endDate;
 	
-	private Map<Criteria,String> eligiblities;
+	private String ageEligibility;
+	
+	private String qualification;
+	
+	private String maritalStatus;
+	
+	private long incomeBounded;
+	
+	private Caste caste;
 	
 	private String tradeType;
 	
 	private byte[] eventPic;
+	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 	
 	public String getEventName() {
 		return eventName;
@@ -103,13 +122,44 @@ public class TrainingEvent {
 		this.eventPic = eventPic;
 	}
 
-	public Map<Criteria, String> getEligiblities() {
-		return eligiblities;
+	public String getAgeEligibility() {
+		return ageEligibility;
 	}
 
-	public void setEligiblities(Map<Criteria, String> eligiblities) {
-		this.eligiblities = eligiblities;
+	public void setAgeEligibility(String ageEligibility) {
+		this.ageEligibility = ageEligibility;
 	}
-	
+
+	public String getQualification() {
+		return qualification;
+	}
+
+	public void setQualification(String qualification) {
+		this.qualification = qualification;
+	}
+
+	public String getMaritalStatus() {
+		return maritalStatus;
+	}
+
+	public void setMaritalStatus(String maritalStatus) {
+		this.maritalStatus = maritalStatus;
+	}
+
+	public long getIncomeBounded() {
+		return incomeBounded;
+	}
+
+	public void setIncomeBounded(long incomeBounded) {
+		this.incomeBounded = incomeBounded;
+	}
+
+	public Caste getCaste() {
+		return caste;
+	}
+
+	public void setCaste(Caste caste) {
+		this.caste = caste;
+	}
 
 }
