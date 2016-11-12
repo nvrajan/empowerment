@@ -27,10 +27,16 @@ public class CarController {
 		return "home";
 	}
 	
+	@RequestMapping("/home2")
+	public String home2(Model model) {
+		model.addAttribute("carList", carRepository.findAll());
+		return "home2";
+	}
+	
 	@RequestMapping(value = "/addCar", method = RequestMethod.POST)
 	public String addCar(@ModelAttribute Car car) {
 		carRepository.save(car);
-		return "redirect:home";
+		return "redirect:home2";
 	}
 	
 	@RequestMapping(value = "/search")
