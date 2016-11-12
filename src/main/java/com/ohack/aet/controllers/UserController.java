@@ -38,8 +38,10 @@ public class UserController {
 		// find the user
 		if (user != null && user.getAadharNo() != null) {
 			User userFound = userRepository.findOne(user.getAadharNo());
-			System.out.println(userFound.toString());
-
+			if(userFound!=null){
+				System.out.println(userFound.toString());
+			}
+			
 			// FIX ME
 			pageName = "home";
 			/*
