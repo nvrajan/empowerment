@@ -1,7 +1,6 @@
 package com.tests4geeks.tutorials.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +11,7 @@ import com.tests4geeks.tutorials.model.Car;
 import com.tests4geeks.tutorials.repository.CarMongoRepository;
 import com.tests4geeks.tutorials.repository.CarSearchRepository;
 
-@Controller
+//@Controller
 public class CarController {
 
 	@Autowired

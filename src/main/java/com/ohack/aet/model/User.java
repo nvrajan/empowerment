@@ -3,14 +3,14 @@ package com.ohack.aet.model;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import com.ohack.aet.constants.MaritalStatus;
-import com.ohack.aet.constants.Role;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Document(collection = "users")
 public class User {
 	
+	@Id
 	private String aadharNo;
 	
 	private String password;
@@ -19,6 +19,7 @@ public class User {
 	
 	private String lastName;
 	
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private Date dob;
 	
 	private String caste;
@@ -37,7 +38,7 @@ public class User {
 	
     private int noOfChildren;
     
-    private MaritalStatus maritalStatus;
+    private String maritalStatus;
     
     private List<TrainingEvent> enrolledEvents;
     
@@ -45,7 +46,7 @@ public class User {
     
     private List<String> skills;
     
-    private Role role;
+    private String role;
     
     private byte[] userPic;
 
@@ -153,11 +154,11 @@ public class User {
 		this.noOfChildren = noOfChildren;
 	}
 
-	public MaritalStatus getMaritalStatus() {
+	public String getMaritalStatus() {
 		return maritalStatus;
 	}
 
-	public void setMaritalStatus(MaritalStatus maritalStatus) {
+	public void setMaritalStatus(String maritalStatus) {
 		this.maritalStatus = maritalStatus;
 	}
 
@@ -185,11 +186,11 @@ public class User {
 		this.skills = skills;
 	}
 
-	public Role getRole() {
+	public String getRole() {
 		return role;
 	}
 
-	public void setRole(Role role) {
+	public void setRole(String role) {
 		this.role = role;
 	}
 
@@ -201,12 +202,5 @@ public class User {
 		this.userPic = userPic;
 	}
     
-    
-    
-   
-     
-    
-	
-	
 
 }
