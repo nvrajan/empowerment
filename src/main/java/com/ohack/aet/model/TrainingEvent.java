@@ -1,9 +1,11 @@
 package com.ohack.aet.model;
 
 import java.util.Date;
-import java.util.List;
+import java.util.Map;
 
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.ohack.aet.constants.Criteria;
 
 @Document(collection = "events")
 public class TrainingEvent {
@@ -22,7 +24,7 @@ public class TrainingEvent {
 	
 	private Date endDate;
 	
-	private List<String> eligiblities;
+	private Map<Criteria,String> eligiblities;
 	
 	private String tradeType;
 	
@@ -84,13 +86,6 @@ public class TrainingEvent {
 		this.endDate = endDate;
 	}
 
-	public List<String> getEligiblities() {
-		return eligiblities;
-	}
-
-	public void setEligiblities(List<String> eligiblities) {
-		this.eligiblities = eligiblities;
-	}
 
 	public String getTradeType() {
 		return tradeType;
@@ -107,8 +102,14 @@ public class TrainingEvent {
 	public void setEventPic(byte[] eventPic) {
 		this.eventPic = eventPic;
 	}
-	
-	
+
+	public Map<Criteria, String> getEligiblities() {
+		return eligiblities;
+	}
+
+	public void setEligiblities(Map<Criteria, String> eligiblities) {
+		this.eligiblities = eligiblities;
+	}
 	
 
 }
